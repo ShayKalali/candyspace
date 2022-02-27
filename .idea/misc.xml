@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Projects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.29270833333333335" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/drawable-v23/background_round.xml" value="0.24537037037037038" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/drawable/background_round.xml" value="0.18703703703703703" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/drawable/background_round_toast_white.xml" value="0.1" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/drawable/btn_backgroud.xml" value="0.25" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/drawable/ic_location.xml" value="0.30885416666666665" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/layout/fragment_user_detail.xml" value="0.22" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/layout/fragment_user_list.xml" value="0.4466666666666667" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/layout/row_user.xml" value="0.3333333333333333" />
+        <entry key="..\:/Projects/android-assignment/Candyspace/app/src/main/res/layout/toast_message_above_control.xml" value="0.18840579710144928" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="dagger.Binds" />
+      <item index="1" class="java.lang.String" itemvalue="dagger.android.ContributesAndroidInjector" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
