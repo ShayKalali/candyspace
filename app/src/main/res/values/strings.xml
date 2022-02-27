@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Candyspace</string>
 
+    <string name="client_error">Couldn\'t get data. Please try again.</string>
+    <string name="server_error">Unknown server error.</string>
+    <string name="unknown_error">Unknown error.</string>
+
 </resources>
