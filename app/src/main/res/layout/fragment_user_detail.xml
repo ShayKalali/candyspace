@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.candyspace.ui.fragment.userdetail.UserDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:paddingBottom="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/iv_user_detail_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:cardBackgroundColor="@color/grey_light"
+                app:cardCornerRadius="95dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    glide="@{viewModel.userAvatarUrl}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@{viewModel.userName}"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_user_detail_avatar"
+                tools:text="Shay Kalali" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_detail_reputation_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/user_detail_reputation_label"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/cv_user_detail_badge_bronze"
+                app:layout_constraintStart_toStartOf="@id/cv_user_detail_badge_gold"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_detail_reputation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@{viewModel.reputation}"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
+                app:layout_constraintEnd_toEndOf="@id/tv_user_detail_reputation_label"
+                app:layout_constraintStart_toStartOf="@id/tv_user_detail_reputation_label"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation_label"
+                tools:text="13" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_user_detail_badge_gold"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="95dp"
+                app:cardElevation="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/ic_gold_medal"
+                    android:gravity="center"
+                    android:text="@{viewModel.goldBadge}"
+                    android:textSize="13sp"
+                    tools:text="13" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_user_detail_badge_silver"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                app:cardCornerRadius="95dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toStartOf="@id/cv_user_detail_badge_bronze"
+                app:layout_constraintStart_toEndOf="@id/cv_user_detail_badge_gold"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/ic_silver_medal"
+                    android:gravity="center"
+                    android:text="@{viewModel.silverBadge}"
+                    android:textSize="13sp"
+                    tools:text="13" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_user_detail_badge_bronze"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="95dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableTop="@drawable/ic_bronze_medal"
+                    android:gravity="center"
+                    android:text="@{viewModel.bronzeBadge}"
+                    android:textSize="13sp"
+                    tools:text="13" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_detail_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="@{viewModel.location}"
+                android:textSize="18sp"
+                android:visibility="@{viewModel.location!=null ? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="@id/cv_user_detail_badge_bronze"
+                app:layout_constraintStart_toStartOf="@id/cv_user_detail_badge_gold"
+                app:layout_constraintTop_toBottomOf="@id/cv_user_detail_badge_gold"
+                tools:text="USA"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_detail_creation_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/user_detail_user_created_at_label"
+                android:textColor="@color/font_grey"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_user_detail_avatar"
+                app:layout_constraintStart_toStartOf="@id/iv_user_detail_avatar"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_location" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_detail_creation_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@{viewModel.creationDate}"
+                android:textColor="@color/font_grey"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_creation_date_label"
+                tools:text="18 April 2022" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

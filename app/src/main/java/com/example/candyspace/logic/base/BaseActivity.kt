@@ -38,4 +38,34 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
         return viewModel
     }
 
+    fun setUpActionBar(
+        isBackButtonVisible: Boolean,
+        title: String = ""
+    ) {
+        supportActionBar?.customView?.setBackgroundColor(
+            ContextCompat.getColor(
+                this,
+                R.color.black
+            )
+        )
+        supportActionBar?.setDisplayHomeAsUpEnabled(isBackButtonVisible)
+        setActionBarTitle(title)
+    }
+
+    private fun setActionBarTitle(title: String) {
+        val text: Spannable = SpannableString(title)
+        text.setSpan(
+            ForegroundColorSpan(Color.WHITE),
+            0,
+            text.length,
+            Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+        supportActionBar?.title = text
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        onBackPressed()
+        return super.onOptionsItemSelected(item)
+    }
 }

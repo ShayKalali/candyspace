@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.candyspace.di.scope.ApplicationScope
 import com.example.candyspace.di.util.ViewModelKey
 import com.example.candyspace.logic.ViewModelProviderFactory
+import com.example.candyspace.ui.fragment.userdetail.UserDetailViewModel
 import com.example.candyspace.ui.fragment.userlist.UserListViewModel
 import dagger.Binds
 import dagger.Module
@@ -19,6 +20,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(UserListViewModel::class)
     abstract fun bindUserListViewModel(userListViewModel: UserListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(UserDetailViewModel::class)
+    abstract fun bindUserDetailViewModel(userDetailViewModel: UserDetailViewModel): ViewModel
 
     @Binds
     @ApplicationScope
