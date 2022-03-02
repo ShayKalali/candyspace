@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Candyspace</string>
+
+    <string name="users_list_search_by_name_hint">Search by name</string>
+    <string name="users_list_search_button">Search</string>
+    <string name="users_list_row_view_profile_btn_text">View Profile</string>
+
+    <string name="user_detail_reputation_label">User Reputation</string>
+    <string name="user_detail_location_label">Location :</string>
+    <string name="user_detail_user_created_at_label">User created at :</string>
+
+    <string name="client_error">Couldn\'t get data. Please try again.</string>
+    <string name="server_error">Unknown server error.</string>
+    <string name="unknown_error">Unknown error.</string>
+
+    <string name="dialog_exit_title">Are you sure?</string>
+    <string name="dialog_exit_message">Do you want to exit the app?</string>
+    <string name="dialog_exit_yes">Yes</string>
+    <string name="dialog_exit_no">No</string>
+
+</resources>
