@@ -1,5 +1,6 @@
 package com.example.candyspace.ui.fragment.userlist
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -24,6 +25,7 @@ class UserListFragment : BaseFragment<UserListViewModel, FragmentUserListBinding
 
     override var layout: Int = R.layout.fragment_user_list
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

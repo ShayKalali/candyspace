@@ -38,8 +38,8 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     glide="@{viewModel.userAvatarUrl}"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:padding="8dp"
                     tools:srcCompat="@tools:sample/avatars" />
             </androidx.cardview.widget.CardView>
@@ -65,8 +65,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="@string/user_detail_reputation_label"
-                android:textSize="18sp"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@id/cv_user_detail_badge_bronze"
                 app:layout_constraintStart_toStartOf="@id/cv_user_detail_badge_gold"
                 app:layout_constraintTop_toBottomOf="@id/tv_user_detail_name" />
@@ -77,15 +77,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
-                android:text="@{viewModel.reputation}"
-                android:textSize="20sp"
                 android:gravity="center"
-                android:textStyle="bold"
+                android:text="@{viewModel.reputation}"
                 android:textColor="@color/purple_700"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/tv_user_detail_reputation_label"
                 app:layout_constraintStart_toStartOf="@id/tv_user_detail_reputation_label"
                 app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation_label"
                 tools:text="13" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_user_detail_top_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:visibility="@{viewModel.topTags == null || viewModel.topTags.size == 0 ? View.GONE : View.VISIBLE}"
+                app:flow_wrapMode="aligned"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/cv_user_detail_badge_bronze"
+                app:layout_constraintStart_toStartOf="@id/cv_user_detail_badge_gold"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation"
+                tools:visibility="visible" />
 
 
             <androidx.cardview.widget.CardView
@@ -97,7 +110,7 @@
                 app:cardCornerRadius="95dp"
                 app:cardElevation="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation">
+                app:layout_constraintTop_toBottomOf="@id/rv_user_detail_top_tags">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -119,7 +132,7 @@
                 app:cardElevation="10dp"
                 app:layout_constraintEnd_toStartOf="@id/cv_user_detail_badge_bronze"
                 app:layout_constraintStart_toEndOf="@id/cv_user_detail_badge_gold"
-                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation">
+                app:layout_constraintTop_toBottomOf="@id/rv_user_detail_top_tags">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -141,7 +154,7 @@
                 app:cardCornerRadius="95dp"
                 app:cardElevation="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_user_detail_reputation">
+                app:layout_constraintTop_toBottomOf="@id/rv_user_detail_top_tags">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"

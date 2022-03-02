@@ -9,6 +9,7 @@ import com.example.candyspace.databinding.FragmentUserDetailBinding
 import com.example.candyspace.logic.base.BaseActivity
 import com.example.candyspace.logic.base.BaseFragment
 import com.example.candyspace.ui.activity.MainActivity
+import com.google.android.flexbox.*
 import javax.inject.Inject
 
 
@@ -16,6 +17,10 @@ class UserDetailFragment : BaseFragment<UserDetailViewModel, FragmentUserDetailB
 
     @Inject
     lateinit var viewModelProviderFactory: ViewModelProvider.Factory
+
+    @Inject
+    lateinit var adapter: TopTagsRecyclerViewAdapter
+
     override var layout: Int = R.layout.fragment_user_detail
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -24,6 +29,19 @@ class UserDetailFragment : BaseFragment<UserDetailViewModel, FragmentUserDetailB
             if (user != null) {
                 fragmentViewModel.setUserDetail(user)
                 (requireActivity() as BaseActivity).setUpActionBar(true, user.name ?: "")
+            }
+        })
+
+        fragmentViewModel.topTags.observe(viewLifecycleOwner, { topTags ->
+            if (topTags != null) {
+                adapter.setData(topTags)
+                val layoutManager = FlexboxLayoutManager(requireContext())
+                layoutManager.flexWrap = FlexWrap.WRAP
+                layoutManager.flexDirection = FlexDirection.ROW
+                layoutManager.justifyContent = JustifyContent.FLEX_START
+                layoutManager.alignItems = AlignItems.FLEX_START
+                binding.rvUserDetailTopTags.layoutManager = layoutManager
+                binding.rvUserDetailTopTags.adapter = adapter
             }
         })
     }

@@ -70,7 +70,6 @@ class UserDetailViewModel @Inject constructor(
         }
     }
 
-
     fun clearData() {
         userAvatarUrl.value = null
         userName.value = null
