@@ -3,7 +3,6 @@ package com.example.candyspace.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.candyspace.di.scope.ApplicationScope
 import com.example.candyspace.di.util.ViewModelKey
 import com.example.candyspace.logic.ViewModelProviderFactory
 import com.example.candyspace.ui.fragment.userdetail.UserDetailViewModel
@@ -11,6 +10,7 @@ import com.example.candyspace.ui.fragment.userlist.UserListViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import javax.inject.Singleton
 
 
 @Module
@@ -27,6 +27,6 @@ abstract class ViewModelModule {
     abstract fun bindUserDetailViewModel(userDetailViewModel: UserDetailViewModel): ViewModel
 
     @Binds
-    @ApplicationScope
+    @Singleton
     abstract fun bindViewModelFactory(factory: ViewModelProviderFactory): ViewModelProvider.Factory
 }
