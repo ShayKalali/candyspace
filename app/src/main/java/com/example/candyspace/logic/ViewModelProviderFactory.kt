@@ -2,11 +2,11 @@ package com.example.candyspace.logic
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.candyspace.di.scope.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
+import javax.inject.Singleton
 
-@ApplicationScope
+@Singleton
 class ViewModelProviderFactory @Inject constructor(private val creators: MutableMap<Class<out ViewModel>, Provider<ViewModel>>?) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

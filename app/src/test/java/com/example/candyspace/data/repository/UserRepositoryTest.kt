@@ -2,7 +2,6 @@ package com.example.candyspace.data.repository
 
 import android.content.Context
 import com.example.candyspace.data.dto.response.*
-import com.example.candyspace.network.ApiClient
 import com.example.candyspace.network.UserApiService
 import com.nhaarman.mockitokotlin2.any
 import io.mockk.every
@@ -17,7 +16,6 @@ import retrofit2.Response
 import java.util.*
 
 class UserRepositoryTest {
-    private lateinit var apiClient: ApiClient
     private lateinit var userApiService: UserApiService
     private lateinit var repository: UserRepository
     private lateinit var context: Context
@@ -65,11 +63,9 @@ class UserRepositoryTest {
 
     @Before
     fun setUp() {
-        apiClient = mockkClass(ApiClient::class)
         userApiService = mockkClass(UserApiService::class)
         context = mockkClass(Context::class)
-        every { apiClient.getClient<UserApiService>() } returns userApiService
-        repository = UserRepository(apiClient, context)
+        repository = UserRepository(userApiService, context)
     }
 
     @Test

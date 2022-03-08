@@ -92,8 +92,7 @@ class UserResponseTest {
         val actualUsers = userResponse.mapToListOfUsers()
         Assert.assertEquals("There should be 3 user", 3, actualUsers.size)
 
-        // User 1
-        for (index in 1..1) {
+        for (index in 0..2) {
             val actualUser = actualUsers[index]
             val item = userResponse.items[index]
             Assert.assertEquals("Name should be correct", item.displayName, actualUser.name)

@@ -4,19 +4,20 @@ import android.app.Application
 import android.content.Context
 import com.example.candyspace.AndroidApp
 import com.example.candyspace.di.qualifier.ApplicationContext
-import com.example.candyspace.di.scope.ApplicationScope
 import dagger.Binds
 import dagger.Module
+import javax.inject.Singleton
 
 @Module
 abstract class ApplicationModule {
     @ApplicationContext
     @Binds
-    @ApplicationScope
+    @Singleton
     abstract fun bindContext(application: AndroidApp): Context
 
 
     @Binds
-    @ApplicationScope
+    @Singleton
     abstract fun bindApplication(application: AndroidApp): Application
+
 }
